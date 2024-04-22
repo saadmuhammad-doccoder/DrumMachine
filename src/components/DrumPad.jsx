@@ -11,6 +11,7 @@ export function DrumPad(props) {
           key={index}
           url={pad.url}
           keyBtn={pad.key}
+          keyCode={pad.keyCode}
           id={pad.id}
           setAudioName={props.setAudioName}
         />

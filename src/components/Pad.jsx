@@ -7,14 +7,14 @@ export function Pad(props) {
   const keyPad = useRef();
 
   const handleKeyDown = (event) => {
-    const btnPressed = event.key;
-
-    if (keyPad.current.innerText === props.keyBtn) {
-      console.log(keyPad.current.firstChild);
+    const btnPressed = event;
+    if (btnPressed.keyCode === props.keyCode) {
+      console.log(btnPressed.keyCode, props.keyCode);
+      //   console.log(keyPad.current.firstChild);
       const audio = document.querySelector(`#${props.keyBtn}`);
-      keyPad.current.currentTime = 0;
       props.setAudioName(props.id);
-      setTimeout(() => keyPad.current.firstChild.play(), 100);
+      audio.currentTime = 0;
+      audio.play();
     }
   };
 
